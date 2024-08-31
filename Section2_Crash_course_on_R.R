@@ -1,4 +1,6 @@
+# ==============================================
 # Video 8. Basics of R: Atomic types and Vectors
+# ==============================================
 a <- "hello"
 class(a)
 myInteger <- 62L
@@ -31,3 +33,85 @@ x <- c(1,2,3)
 y <- c(4,5,6)
 z <- c(x,y)
 z <- c(x, 777, y)
+
+# ==============================================
+# Video 9. Basics of R: Lists
+# ==============================================
+
+l <- list("John", 72, TRUE)
+l
+v <- c(1,2,3)
+l <- list("John", 72, TRUE, v)
+l
+l <- list("John", 72, TRUE, v, list("Anna", "bob"))
+l
+l[1]
+class(l[1])
+l[[1]]
+class(l[[1]])
+l[[5]][[2]]
+names(l) <- c("Name", "Age", "Retired", "Numbers", "Parents")
+l
+l$Retired
+'[[3'
+l[[3]]
+l[["Retired"]]
+xx <- "Retired"
+l[[xx]]
+length(l)
+l$Name
+l$Name <- "James"
+l
+l[length(l) + 1] <- "Boston"
+l
+names(l)
+names(l)[6] <- "Residence"
+l
+l$Birthplace <- "Chapel Hill"
+l
+l$Residence <- NULL
+l
+
+
+# ==============================================
+# Video 10. Basics of R: Matrices
+# ==============================================
+
+x <- matrix(1:12, nrow = 4, ncol = 3)
+x
+y <- matrix(1:12, nrow = 6)
+y
+myrows <- c("A", "B", "C", "D")
+mycols <- c("col1", "col2", "col3", "col4")
+x <- matrix(data = 1:16, nrow = 4, ncol = 4, dimnames = list(myrows, mycols))
+x
+colnames(x)
+rownames(x)
+rownames(x)[4]
+rownames(x)[4] <- "ZZ"
+x
+x[14]
+x[3,3]
+x[2,3]
+x[2, "col3"]
+x[2,]
+x[,2]
+x[1:3, 3:4]
+t(x)
+cbind(x, c(11,22,33,44))
+x
+cbind(x, "col5" = c(11,22,33,44))
+x
+dim(x)
+dim(x) <- c(2,8)
+x
+a <- c(1,2,3,4)
+b <- c(11,22,33,44)
+is.vector(a)
+is.matrix(a)
+m1 <- rbind(a,b)
+m1
+is.matrix(m1)
+m2 <- cbind(a,b)
+m2
+dim(m2)
