@@ -128,3 +128,46 @@ a[2.3.2]
 a[2,3,3]
 a[2,3,2]
 a[,1,]
+
+# ==============================================
+# Video 12. Basics of R: Dataframes
+# ==============================================
+
+df <- data.frame(x=1:3, y=3:1)
+df
+person_names <- c("Alice", "Bob", "Charlie", "David")
+ages <- c(45,35,25,60)
+df <- data.frame(person_names, ages)
+df
+class(df)
+typeof(df)
+cars
+head(cars)
+head(cars,10)
+class(cars)
+length(cars)
+ncol(cars)
+nrow(cars)
+c <- cars
+c$speed
+c["speed"]
+class(c$speed)
+c$speed
+class(cars["speed"])
+class(c["speed"])
+head(c)
+c[c$speed<=7,]
+c[c$speed<=7 & c$dist>=10,]
+
+c[1,1] <- 100
+head(c)
+c[c$speed==7,]$speed <- 100
+head(c)
+c <- rbind(c, c(99,77))
+tail(c)
+colnames(c)
+colnames(c)[2]
+colnames(c)[2] <- "distance"
+colnames(c)
+c$distance
+
