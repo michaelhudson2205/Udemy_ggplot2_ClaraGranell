@@ -171,3 +171,25 @@ colnames(c)[2] <- "distance"
 colnames(c)
 c$distance
 
+# ==============================================
+# Video 14. Basics of R: Factors
+# ==============================================
+
+x <- factor(c("Good", "Bad", "Bad", "Good", "Bad"))
+x
+is.factor(x)
+
+
+x <- factor(c("Good", "Bad", "Bad", "Good", "Bad", "Horrible"), levels = c("Good", "Bad", "Excellent"))
+x
+
+opinions <- c("Horrible", "Bad", "Neutral", "Good", "Fantastic")
+opinions
+opinions <- as.factor(opinions)
+opinions
+count <- c(45,35,22,60,15)
+df <- data.frame(opinions, count)
+df
+newOrder <- c("Horrible", "Bad", "Neutral", "Good", "Fantastic")
+dff <- transform(df, opinions = factor(opinions, levels = newOrder))
+dff
